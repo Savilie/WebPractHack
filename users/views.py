@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from rest_framework import permissions, status
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from rest_framework.permissions import IsAuthenticatedOrReadOnly, AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
@@ -11,7 +11,7 @@ from .serializers import CustomUserSerializer
 # Create your views here.
 
 class CustomUserAPIView(APIView):
-    permission_classes = [CanEditTeammateProfile]
+    permission_classes = [AllowAny]
     queryset = CustomUser.objects.all()
 
     def get(self, request):

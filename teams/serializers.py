@@ -5,9 +5,9 @@ from .models import *
 
 
 class TeamSerializer(serializers.Serializer):
-    id = serializers.IntegerField()
+    id = serializers.IntegerField(read_only=True)
     name = serializers.CharField(max_length=20)
-    banner = serializers.CharField()
+    banner = serializers.CharField(allow_null=True)
 
     def create(self, validated_data):
         return Team.objects.create(**validated_data)

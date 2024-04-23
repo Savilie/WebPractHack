@@ -27,6 +27,7 @@ urlpatterns = [
     path('api/v1/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/v1/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
     path('api/v1/team_list/', TeamAPIView.as_view(), name="team_list"),
+    path('api/v1/team_list/<int:pk>/', TeamAPIView.as_view(), name="team_list"),
     path('api/v1/users_list/', CustomUserAPIView.as_view(), name="users_list"),
     path('api/v1/users_list/<int:pk>/', CustomUserAPIView.as_view(), name="users_list"),
 

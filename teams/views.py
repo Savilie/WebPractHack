@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from rest_framework import status, permissions
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from rest_framework.permissions import IsAuthenticatedOrReadOnly, AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from .models import Team
@@ -11,7 +11,7 @@ from .serializers import *
 # Create your views here.
 
 class TeamAPIView(APIView):
-    permission_classes = [IsAuthenticatedOrReadOnly, IsCaptainOfTeam]
+    permission_classes = [AllowAny]
     queryset = Team.objects.all()  # Установите queryset вашей модели Product
 
     def get(self, request):
