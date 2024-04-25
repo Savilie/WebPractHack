@@ -23,9 +23,8 @@ class CustomUserAPIView(APIView):
 
         return Response({'users': CustomUserSerializer(cu, many=True).data})
 
-    def patch(self, request, pk, *args, **kwargs):
+    def patch(self, request, instance, pk, *args, **kwargs):
         user = request.user
-
         if not pk:
             return Response({"error": "Patch method is not allowed"})
 
@@ -51,7 +50,12 @@ class CustomUserAPIView(APIView):
 
         return Response({'post': serializer.data})
 
-    def delete(self, request, pk):
+    def delete(self, request, instance, pk):
+	user = request.user
+	if user.is_captain and user.team_id==instance.team_id:
+                pass
+            else:
+                return Response({"error": "Different teams"})
         try:
             product = CustomUser.objects.get(pk=pk)
         except CustomUser.DoesNotExist:

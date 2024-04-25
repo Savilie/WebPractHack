@@ -15,7 +15,7 @@ class CustomUserSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
     email = serializers.EmailField(allow_null=True)
     name = serializers.CharField(max_length=255)
-    description = serializers.CharField(max_length=255, allow_null=True)
+    description = serializers.CharField(max_length=255, allow_null=True, allow_blank=True)
     photo = serializers.CharField()
     team_id = serializers.IntegerField()
     is_captain = serializers.BooleanField()

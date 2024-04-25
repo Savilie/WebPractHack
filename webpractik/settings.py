@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-(%-u3$g!(&rxeq1a*p^^yqh3*i%759nij8mf!&^l#4f%mq%+a!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['5.35.90.155']
 
 
 # Application definition
@@ -133,8 +133,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'webpractik',
         'USER': 'root',
-        'PASSWORD': 'Danonechik2006',
-        'HOST': '127.0.0.1',
+        'PASSWORD': 'danoneroot',
+        'HOST': 'localhost',
         'PORT': '3306',
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
@@ -180,7 +180,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = 'home/hack/WebPractHack/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

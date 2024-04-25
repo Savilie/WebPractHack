@@ -11,7 +11,7 @@ from .serializers import *
 # Create your views here.
 
 class TeamAPIView(APIView):
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticatedOrReadOnly, IsCaptainOfTeam]
     queryset = Team.objects.all()  # Установите queryset вашей модели Product
 
     def get(self, request):
